@@ -1,10 +1,14 @@
-# simple_webpack_command
+# @cocon/create-app
 
-```
-1. 全局安装simple_webpack   npm install -g simple_webpack_command
-2. 创建项目模板   simple-webpack create
-```
+- 全局安装 
 
-```
-帮助 simple-webpack -help
-```
+  ``` npm install -g @cocon/create-app ```
+
+- 创建项目模板   
+
+  ```cocon create```
+
+- 帮助: 
+
+  ```cocon -help```
+
