@@ -14,11 +14,11 @@ program.version("0.0.1", "-v, --version", "new version message");
 
 program
 
-  .command("create [fileName]")
+  .command("create")
 
   .description("Create a new react template")
 
-  .action(fileName => {
+  .action(() => {
     
     inquirer.prompt([
         {
