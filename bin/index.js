@@ -34,10 +34,10 @@ program
             process.exit(0);
         }
 
-        if (fs.existsSync(path.resolve('template-react'))) {
-            console.log(chalk.bold.red('The template-react default directory already exists, please remove the retry!'));
-            process.exit(0);
-        }
+        // if (fs.existsSync(path.resolve('template-react'))) {
+        //     console.log(chalk.bold.red('The template-react default directory already exists, please remove the retry!'));
+        //     process.exit(0);
+        // }
 
         spinner.start("generated...");
 
