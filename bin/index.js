@@ -106,7 +106,7 @@ function downloadTs() {
             }
 
             if (targetDir !== 'template-react-ts') {
-                exec(`mv template-react/ ${targetDir}`);
+                exec(`mv typescript-cli/ ${targetDir}`);
             }
 
             exec(`rm -rf ${targetDir}/.git`);
