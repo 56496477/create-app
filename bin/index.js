@@ -10,7 +10,7 @@ const path = require("path");
 
 const spinner = new Ora();
 
-program.version("0.0.1", "-v, --version", "new version message");
+program.version("0.0.9", "-v, --version", "new version message");
 
 program
   .command("create")
@@ -51,6 +51,11 @@ async function downloadJs() {
         }
     ]);
 
+    if(targetDir === 'template-react') {
+        console.log(chalk.bold.red('Please change directory!'));
+        process.exit(0);
+    }
+
     if (fs.existsSync(path.resolve(targetDir))) {
         console.log(chalk.bold.red('The directory already exists, please input!'));
         process.exit(0);
@@ -65,9 +70,7 @@ async function downloadJs() {
             process.exit(0);
         }
 
-        if (targetDir !== 'template-react') {
-            exec(`mv template-react/ ${targetDir}`);
-        }
+        exec(`mv template-react/ ${targetDir}`);
 
         exec(`rm -rf ${targetDir}/.git`);
 
@@ -94,6 +97,11 @@ async function downloadTs() {
         }
     ]);
 
+    if(targetDir === 'typescript-cli') {
+        console.log(chalk.bold.red('Please change directory!'));
+        process.exit(0);
+    }
+
     if (fs.existsSync(path.resolve(targetDir))) {
         console.log(chalk.bold.red('The directory already exists, please input!'));
         process.exit(0);
@@ -108,9 +116,7 @@ async function downloadTs() {
             process.exit(0);
         }
 
-        if (targetDir !== 'typescript-cli') {
-            exec(`mv typescript-cli/ ${targetDir}`);
-        }
+        exec(`mv typescript-cli/ ${targetDir}`);
 
         exec(`rm -rf ${targetDir}/.git`);
 
