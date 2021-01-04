@@ -14,7 +14,8 @@ program.version("0.0.9", "-v, --version", "new version message");
 
 const gits = {
     js: 'https://github.com/56496477/template-react.git',
-    ts: 'https://github.com/56496477/typescript-cli.git'
+    ts: 'https://github.com/56496477/typescript-cli.git',
+    rollup: 'https://github.com/56496477/template-rollup.git'
 }
 
 program
@@ -29,6 +30,7 @@ program
             choices: [
                 "javascript",
                 "typescript",
+                "rollup"
             ]
         }
     ])
@@ -37,6 +39,9 @@ program
     }
     if(type === 'typescript') {
         await downloadTs();
+    }
+    if(type === 'rollup') {
+        await downloadRollup();
     }
 });
 
@@ -87,6 +92,36 @@ async function downloadTs() {
     }
     spinner.start("generated...");
     exec(`git clone --depth=1 ${gits.ts} ${targetDir}`, (error) => {
+        if (error) {
+            console.log(chalk.bold.red('Pull error !'));
+            process.exit(0);
+        }
+        exec(`rm -rf ${targetDir}/.git`);
+        spinner.succeed('Successful...!');
+        console.log(chalk.green`The project has been built successfully: `)
+        console.log(chalk.blue(`1.Enter the working directory: cd ${targetDir}`));
+        console.log(chalk.blue(`2.yarn or npm install`));
+        console.log(chalk.blue(`enjoy it !`));
+    });
+}
+
+async function downloadRollup() {
+    const { targetDir } = await inquirer.prompt([
+        {
+            type: 'input',
+            name: 'targetDir',
+            message: chalk.blue(`${chalk.bold.red(`Build director`)}:`),
+            validate: function(val = '') {
+                return val !== '';
+            }
+        }
+    ]);
+    if (fs.existsSync(path.resolve(targetDir))) {
+        console.log(chalk.bold.red('The directory already exists, please input!'));
+        process.exit(0);
+    }
+    spinner.start("generated...");
+    exec(`git clone --depth=1 ${gits.rollup} ${targetDir}`, (error) => {
         if (error) {
             console.log(chalk.bold.red('Pull error !'));
             process.exit(0);
