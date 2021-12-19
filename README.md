@@ -1,14 +1,32 @@
-# @cocon/create-app
+# @cocon/create-app 
 
-- 全局安装 
+<a href="https://www.npmjs.com/package/@cocon/create-app"><img alt="npm" src="https://img.shields.io/badge/npm-1.0.0-brightgreen"></a>
 
-  ``` npm install -g @cocon/create-app ```
+快速创建react web项目的脚手架
 
-- 创建项目模板   
+## 支持
 
-  ```cocon create```
+- `rollup`
+- `webpack5` 
+- `typescript`
+- `javascript`
 
-- 帮助: 
 
-  ```cocon -help```
+## 使用
+
+### NPX
+
+```bash
+npx cocon create @cocon/create
+```
+
+### NPM
+
+```bash
+npm install -g @cocon/create-app
+
+cocon create
+```
+
+注: 可分别选择 javascript, typescript, rollup 生成不同的项目
 

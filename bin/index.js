@@ -10,7 +10,7 @@ const path = require("path");
 
 const spinner = new Ora();
 
-program.version("0.0.9", "-v, --version", "new version message");
+program.version("1.0.0", "-v, --version", "new version message");
 
 const gits = {
     js: 'https://github.com/56496477/template-react.git',
