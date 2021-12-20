@@ -13,9 +13,9 @@ const spinner = new Ora();
 program.version("1.0.0", "-v, --version", "new version message");
 
 const gits = {
-    js: 'https://github.com/56496477/template-react.git',
-    ts: 'https://github.com/56496477/typescript-cli.git',
-    rollup: 'https://github.com/56496477/template-rollup.git'
+    js: 'https://gitee.com/niufang/template-react.git',
+    ts: 'https://gitee.com/niufang/typescript-cli.git',
+    rollup: 'https://gitee.com/niufang/template-rollup.git'
 }
 
 program

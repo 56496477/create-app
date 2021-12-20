@@ -1,6 +1,6 @@
 # @cocon/create-app 
 
-<a href="https://www.npmjs.com/package/@cocon/create-app"><img alt="npm" src="https://img.shields.io/badge/npm-1.0.1-brightgreen"></a>
+<a href="https://www.npmjs.com/package/@cocon/create-app"><img alt="npm" src="https://img.shields.io/badge/npm-1.0.2-brightgreen"></a>
 
 快速创建react web项目的脚手架
 
